@@ -11,6 +11,8 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
+import time
+
 app = Flask(__name__)
 
 # 填入你的 message api 資訊
