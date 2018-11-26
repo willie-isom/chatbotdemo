@@ -50,6 +50,16 @@ def handle_message(event):
 		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="艾陞科技"))
 	if msg=="cat":
 		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="喵喵叫"))
+	if msg=="1":
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="求救警報"))		
+	if msg=="2":
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="火災警報"))
+	if msg=="3":
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="瓦斯警報"))
+	if msg=="4":
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="紅外警報"))
+	if msg=="5":
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="磁簧警報"))
 	else:
 		content = "{}: isom love {}".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), event.message.text)
 		line_bot_api.reply_message(event.reply_token,TextSendMessage(text=content))
