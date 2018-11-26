@@ -38,16 +38,16 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)
-    #content = "{}: isom love {}".format(event.source.user_id, event.message.text)
-    #line_bot_api.reply_message(
-        #event.reply_token,
-        #TextSendMessage(text=content))
+	print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)
+	content = "{}: isom love {}".format(event.source.user_id, event.message.text)
+	line_bot_api.reply_message(
+		event.reply_token,
+		TextSendMessage(text=content))
 		
-    content = "{}: isom love {}".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), event.message.text)		
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=content))
+	content = "{}: isom love {}".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), event.message.text)		
+	line_bot_api.reply_message(
+		event.reply_token,
+		TextSendMessage(text=content))
 
 import os
 if __name__ == "__main__":
