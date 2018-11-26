@@ -40,16 +40,20 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-	print("Handle: reply_token: " + event.reply_token + ", message: " + event.message.text)
-	content = "{}: isom love {}".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), event.message.text)		
-	line_bot_api.reply_message(
-		event.reply_token,
-		TextSendMessage(text=content))
-		
-	#content = "{}: isom love {}".format(event.source.user_id, event.message.text)
-	#line_bot_api.reply_message(
-		#event.reply_token,
-		#TextSendMessage(text=content))
+
+	msg = event.message.text
+	print(msg)
+	msg = msg.encode('utf-8')
+	if msg=="DOG":
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="汪汪叫"))
+	if msg=="ian":
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="甚麼"))
+	if msg=="lillian_hong":
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="So cute"))
+	else:
+		content = "{}: isom love {}".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), event.message.text)
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text=content))
+
 	
 import os
 if __name__ == "__main__":
