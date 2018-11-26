@@ -44,12 +44,12 @@ def handle_message(event):
 	msg = event.message.text
 	print(msg)
 	#msg = msg.encode('utf-8')
-	if msg=="DOG":
+	if msg=="dog":
 		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="汪汪叫"))
-	if msg=="ian":
-		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="甚麼"))
-	if msg=="lillian_hong":
-		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="So cute"))
+	if msg=="isom":
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="艾陞科技"))
+	if msg=="cat":
+		line_bot_api.reply_message(event.reply_token,TextSendMessage(text="喵喵叫"))
 	else:
 		content = "{}: isom love {}".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), event.message.text)
 		line_bot_api.reply_message(event.reply_token,TextSendMessage(text=content))
