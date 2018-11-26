@@ -43,6 +43,11 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=content))
+		
+    content = "{}: isom love {}".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), event.message.text)		
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=content))
 
 import os
 if __name__ == "__main__":
